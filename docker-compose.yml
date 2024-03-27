@@ -19,7 +19,7 @@ services:
     expose:
       - 3308
     networks:
-      - ipr-network
+      - debitcharges-network
   debitcharges-api:
     image: lspeixotodev/debitcharges-api
     container_name: debitcharges-api
@@ -34,7 +34,7 @@ services:
       SPRING.DATASOURCE.USERNAME: lucas
       SPRING.DATASOURCE.PASSWORD: lucasadmin3010
     ports:
-      - "80:80"
+      - "6060:6060"
     command: mvn spring-boot:run
     depends_on:
       - db
